@@ -11,6 +11,7 @@ import {
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import LandingScreen from "./components/LandingScreen";
+import LiveWallpaper from "./components/LiveWallpaper";
 import { ThemeProvider } from "./context/ThemeContext";
 import { useInternetIdentity } from "./hooks/useInternetIdentity";
 import Goals from "./pages/Goals";
@@ -41,6 +42,8 @@ function MainApp() {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <LiveWallpaper />
+
       {/* Header */}
       <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur-md">
         <div className="flex items-center justify-between px-4 h-14 max-w-lg mx-auto">
@@ -67,14 +70,7 @@ function MainApp() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 pb-20 max-w-lg mx-auto w-full overflow-x-hidden">
-        <div
-          className="absolute inset-x-0 top-0 pointer-events-none h-64 opacity-60"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 50% at 50% -10%, oklch(var(--primary) / 0.08) 0%, transparent 70%)",
-          }}
-        />
+      <main className="flex-1 pb-20 max-w-lg mx-auto w-full overflow-x-hidden relative z-10">
         <AnimatePresence mode="wait">
           {activeTab === "year" && <YearProgress key="year" />}
           {activeTab === "life" && <LifeCalendar key="life" />}

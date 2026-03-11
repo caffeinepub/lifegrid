@@ -102,18 +102,32 @@ export default function YearProgress() {
             const filled = i < dayOfYear;
             const col = i % COLS;
             const row = Math.floor(i / COLS);
+            if (filled) {
+              return (
+                <motion.circle
+                  key={i}
+                  cx={col * 16 + 8}
+                  cy={row * 16 + 8}
+                  r={5}
+                  fill={theme.exportColors.dotFill}
+                  filter="url(#glow)"
+                  animate={{ opacity: [0.8, 1, 0.8] }}
+                  transition={{
+                    repeat: Number.POSITIVE_INFINITY,
+                    duration: 2,
+                    delay: (i % 20) * 0.1,
+                    ease: "easeInOut",
+                  }}
+                />
+              );
+            }
             return (
               <circle
                 key={i}
                 cx={col * 16 + 8}
                 cy={row * 16 + 8}
                 r={5}
-                fill={
-                  filled
-                    ? theme.exportColors.dotFill
-                    : theme.exportColors.dotEmpty
-                }
-                filter={filled ? "url(#glow)" : undefined}
+                fill={theme.exportColors.dotEmpty}
               />
             );
           })}
