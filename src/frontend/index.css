@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    /* Dark space theme — default */
+    --background: 0.08 0.015 260;
+    --foreground: 0.93 0.01 240;
+    --card: 0.12 0.018 260;
+    --card-foreground: 0.93 0.01 240;
+    --popover: 0.14 0.02 260;
+    --popover-foreground: 0.93 0.01 240;
+    --primary: 0.78 0.22 195;
+    --primary-foreground: 0.08 0.01 260;
+    --secondary: 0.2 0.022 260;
+    --secondary-foreground: 0.93 0.01 240;
+    --muted: 0.18 0.02 260;
+    --muted-foreground: 0.52 0.05 260;
+    --accent: 0.7 0.18 60;
+    --accent-foreground: 0.08 0.01 40;
+    --destructive: 0.62 0.22 25;
+    --destructive-foreground: 0.97 0 0;
+    --border: 0.22 0.025 260;
+    --input: 0.22 0.025 260;
+    --ring: 0.78 0.22 195;
+    --chart-1: 0.78 0.22 195;
+    --chart-2: 0.7 0.18 60;
+    --chart-3: 0.72 0.22 310;
+    --chart-4: 0.72 0.28 145;
+    --chart-5: 0.62 0.22 25;
+    --sidebar: 0.1 0.016 260;
+    --sidebar-foreground: 0.93 0.01 240;
+    --sidebar-primary: 0.78 0.22 195;
+    --sidebar-primary-foreground: 0.08 0.01 260;
+    --sidebar-accent: 0.18 0.02 260;
+    --sidebar-accent-foreground: 0.93 0.01 240;
+    --sidebar-border: 0.22 0.025 260;
+    --sidebar-ring: 0.78 0.22 195;
+  }
+
+  /* Theme: Minimal */
+  [data-theme="minimal"] {
+    --background: 0.09 0 0;
+    --foreground: 0.9 0 0;
+    --card: 0.13 0 0;
+    --card-foreground: 0.9 0 0;
+    --popover: 0.15 0 0;
+    --popover-foreground: 0.9 0 0;
+    --primary: 0.72 0 0;
+    --primary-foreground: 0.09 0 0;
+    --secondary: 0.18 0 0;
+    --secondary-foreground: 0.9 0 0;
+    --muted: 0.17 0 0;
+    --muted-foreground: 0.48 0 0;
+    --accent: 0.55 0 0;
+    --accent-foreground: 0.09 0 0;
+    --border: 0.2 0 0;
+    --input: 0.2 0 0;
+    --ring: 0.72 0 0;
+  }
+
+  /* Theme: Dark (same as :root, explicit) */
+  [data-theme="dark"] {
+    --background: 0.08 0.015 260;
+    --foreground: 0.93 0.01 240;
+    --card: 0.12 0.018 260;
+    --card-foreground: 0.93 0.01 240;
+    --popover: 0.14 0.02 260;
+    --popover-foreground: 0.93 0.01 240;
+    --primary: 0.78 0.22 195;
+    --primary-foreground: 0.08 0.01 260;
+    --secondary: 0.2 0.022 260;
+    --secondary-foreground: 0.93 0.01 240;
+    --muted: 0.18 0.02 260;
+    --muted-foreground: 0.52 0.05 260;
+    --accent: 0.7 0.18 60;
+    --accent-foreground: 0.08 0.01 40;
+    --border: 0.22 0.025 260;
+    --input: 0.22 0.025 260;
+    --ring: 0.78 0.22 195;
+  }
+
+  /* Theme: Neon */
+  [data-theme="neon"] {
+    --background: 0.07 0.02 290;
+    --foreground: 0.92 0.02 130;
+    --card: 0.1 0.025 290;
+    --card-foreground: 0.92 0.02 130;
+    --popover: 0.12 0.025 290;
+    --popover-foreground: 0.92 0.02 130;
+    --primary: 0.82 0.3 138;
+    --primary-foreground: 0.07 0.02 290;
+    --secondary: 0.15 0.025 290;
+    --secondary-foreground: 0.92 0.02 130;
+    --muted: 0.15 0.022 290;
+    --muted-foreground: 0.52 0.06 290;
+    --accent: 0.75 0.3 320;
+    --accent-foreground: 0.07 0.02 290;
+    --border: 0.18 0.03 290;
+    --input: 0.18 0.03 290;
+    --ring: 0.82 0.3 138;
+  }
+
+  /* Theme: Space */
+  [data-theme="space"] {
+    --background: 0.07 0.02 280;
+    --foreground: 0.9 0.01 280;
+    --card: 0.11 0.025 280;
+    --card-foreground: 0.9 0.01 280;
+    --popover: 0.13 0.025 280;
+    --popover-foreground: 0.9 0.01 280;
+    --primary: 0.72 0.22 310;
+    --primary-foreground: 0.07 0.02 280;
+    --secondary: 0.16 0.025 280;
+    --secondary-foreground: 0.9 0.01 280;
+    --muted: 0.16 0.022 280;
+    --muted-foreground: 0.5 0.05 280;
+    --accent: 0.65 0.2 200;
+    --accent-foreground: 0.07 0.02 280;
+    --border: 0.18 0.025 280;
+    --input: 0.18 0.025 280;
+    --ring: 0.72 0.22 310;
+  }
+
+  /* Theme: Matrix */
+  [data-theme="matrix"] {
+    --background: 0.06 0.03 145;
+    --foreground: 0.85 0.15 145;
+    --card: 0.09 0.04 145;
+    --card-foreground: 0.85 0.15 145;
+    --popover: 0.11 0.04 145;
+    --popover-foreground: 0.85 0.15 145;
+    --primary: 0.72 0.28 145;
+    --primary-foreground: 0.06 0.03 145;
+    --secondary: 0.14 0.04 145;
+    --secondary-foreground: 0.85 0.15 145;
+    --muted: 0.14 0.03 145;
+    --muted-foreground: 0.48 0.1 145;
+    --accent: 0.58 0.22 145;
+    --accent-foreground: 0.06 0.03 145;
+    --border: 0.16 0.05 145;
+    --input: 0.16 0.05 145;
+    --ring: 0.72 0.28 145;
+  }
+
+  /* Theme: Gradient */
+  [data-theme="gradient"] {
+    --background: 0.08 0.03 300;
+    --foreground: 0.92 0.02 280;
+    --card: 0.12 0.035 295;
+    --card-foreground: 0.92 0.02 280;
+    --popover: 0.14 0.035 295;
+    --popover-foreground: 0.92 0.02 280;
+    --primary: 0.72 0.25 290;
+    --primary-foreground: 0.08 0.03 300;
+    --secondary: 0.18 0.03 300;
+    --secondary-foreground: 0.92 0.02 280;
+    --muted: 0.17 0.03 300;
+    --muted-foreground: 0.5 0.06 290;
+    --accent: 0.75 0.22 330;
+    --accent-foreground: 0.08 0.03 300;
+    --border: 0.2 0.035 300;
+    --input: 0.2 0.035 300;
+    --ring: 0.72 0.25 290;
+  }
+
+  /* Theme: Motivational */
+  [data-theme="motivational"] {
+    --background: 0.1 0.03 35;
+    --foreground: 0.95 0.01 40;
+    --card: 0.14 0.035 35;
+    --card-foreground: 0.95 0.01 40;
+    --popover: 0.16 0.035 35;
+    --popover-foreground: 0.95 0.01 40;
+    --primary: 0.75 0.22 55;
+    --primary-foreground: 0.1 0.03 35;
+    --secondary: 0.18 0.03 35;
+    --secondary-foreground: 0.95 0.01 40;
+    --muted: 0.18 0.028 35;
+    --muted-foreground: 0.52 0.06 35;
+    --accent: 0.7 0.22 30;
+    --accent-foreground: 0.1 0.03 35;
+    --border: 0.2 0.035 35;
+    --input: 0.2 0.035 35;
+    --ring: 0.75 0.22 55;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Sora', system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  }
+
+  .dot-glow {
+    filter: drop-shadow(0 0 4px oklch(var(--primary) / 0.7));
+  }
+
+  .card-glow {
+    box-shadow: 0 0 20px oklch(var(--primary) / 0.08), 0 4px 20px oklch(0 0 0 / 0.4);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px oklch(var(--primary) / 0.5);
+  }
+
+  .gradient-bg {
+    background: radial-gradient(
+      ellipse 80% 50% at 50% 0%,
+      oklch(var(--primary) / 0.08) 0%,
+      transparent 70%
+    );
+  }
+}
