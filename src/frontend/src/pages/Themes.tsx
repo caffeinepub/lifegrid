@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { Check, Palette } from "lucide-react";
 import { motion } from "motion/react";
@@ -116,12 +115,6 @@ export default function Themes() {
             </motion.button>
           );
         })}
-      </div>
-
-      <div className="text-center">
-        <Button variant="outline" className="text-xs" disabled>
-          Custom colors — Premium only
-        </Button>
       </div>
     </motion.div>
   );

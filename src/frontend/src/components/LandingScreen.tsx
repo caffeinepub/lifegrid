@@ -116,6 +116,18 @@ export default function LandingScreen() {
             <span>Track your time like never before</span>
           </div>
 
+          {/* Logo image */}
+          <div className="flex justify-center mb-4">
+            <img
+              src="/assets/generated/lifegrid-logo-transparent.dim_200x200.png"
+              alt="LifeGrid logo"
+              width={80}
+              height={80}
+              className="w-20 h-20 object-contain"
+              style={{ filter: "drop-shadow(0 0 16px rgba(0,229,255,0.5))" }}
+            />
+          </div>
+
           <h1
             className="font-display text-5xl sm:text-6xl font-bold mb-3 leading-none"
             style={{
@@ -162,6 +174,7 @@ export default function LandingScreen() {
             size="lg"
             onClick={() => login()}
             disabled={isLoggingIn}
+            data-ocid="auth.primary_button"
             className="font-semibold px-8 py-6 text-base"
             style={{ boxShadow: "0 0 30px oklch(0.78 0.22 195 / 0.35)" }}
           >

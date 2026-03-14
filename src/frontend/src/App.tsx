@@ -1,13 +1,6 @@
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
-import {
-  Calendar,
-  Crown,
-  LayoutGrid,
-  Palette,
-  Target,
-  Zap,
-} from "lucide-react";
+import { Calendar, LayoutGrid, Palette, Target, Zap } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import LandingScreen from "./components/LandingScreen";
@@ -17,7 +10,6 @@ import { useInternetIdentity } from "./hooks/useInternetIdentity";
 import Goals from "./pages/Goals";
 import Habits from "./pages/Habits";
 import LifeCalendar from "./pages/LifeCalendar";
-import PremiumDialog from "./pages/Premium";
 import Themes from "./pages/Themes";
 import YearProgress from "./pages/YearProgress";
 
@@ -38,7 +30,6 @@ const TABS: {
 
 function MainApp() {
   const [activeTab, setActiveTab] = useState<Tab>("year");
-  const [premiumOpen, setPremiumOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -56,16 +47,6 @@ function MainApp() {
           >
             LifeGrid
           </span>
-          <button
-            type="button"
-            onClick={() => setPremiumOpen(true)}
-            data-ocid="premium.open_modal_button"
-            className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border border-border hover:bg-muted transition-colors"
-            style={{ color: "oklch(var(--accent))" }}
-          >
-            <Crown className="w-3.5 h-3.5" />
-            Premium
-          </button>
         </div>
       </header>
 
@@ -120,7 +101,6 @@ function MainApp() {
         </div>
       </nav>
 
-      <PremiumDialog open={premiumOpen} onClose={() => setPremiumOpen(false)} />
       <Toaster />
     </div>
   );
